@@ -1,0 +1,48 @@
+# Journal – Initial Build and System Planning
+
+## Summary
+Assembled the PVC frame, planned motor placement, and researched power and electronics architecture for FloodBot.
+
+---
+
+## Journal Entry
+
+I began the FloodBot project by assembling the full PVC frame that will serve as the chassis. The frame was cut, fitted, and assembled to ensure it was square, rigid, and structurally stable. After assembly, I checked the frame for flex and verified that it can support the weight of motors, batteries, electronics, and a waterproof enclosure without deforming. The frame dimensions were intentionally chosen to allow sufficient space for propulsion components, wiring, and future waterproofing.
+
+Once the frame was complete, I planned the placement of the propulsion system. The design uses three bilge pump motors mounted in the existing 1-1/4 inch openings on both sides and in the center of the frame. Each motor will be fitted with a propeller to provide thrust. This configuration allows for forward movement and steering while keeping the system balanced in water. The motor openings were checked for alignment and clearance to ensure secure mounting and accessibility for maintenance.
+
+I then focused on planning the electronics system and enclosure layout. The center of the frame is reserved for a sealed waterproof enclosure that will house all sensitive electronics, including the Raspberry Pi, microcontroller (Arduino or Raspberry Pi Pico), motor driver, buck converter, and internal wiring. Centralizing all electronics in one enclosure simplifies waterproofing, protects components from water exposure, and allows for cleaner cable management.
+
+In parallel, I researched power distribution and motor control strategies to ensure reliable operation in a high-current, wet environment. A major concern was preventing voltage drops and brownouts when the motors start under load. Based on this research, I planned to use a single battery source with a DC-DC buck converter to supply a regulated 5V rail for the Raspberry Pi and microcontroller, while routing raw battery voltage directly to the motor driver. All grounds will be shared to maintain signal stability and reduce electrical noise.
+
+Overall, this phase established a solid mechanical foundation and a clear plan for propulsion, power, and electronics integration. With the chassis complete and system architecture defined, the next step is acquiring components and beginning motor and electronics integration.
+
+---
+
+## Time Spent
+Estimated 6 hours
+
+# Journal – Motor and Electronics Integration Planning
+
+## Summary
+Prepared for motor mounting and electronics integration based on finalized layout.
+
+---
+
+## Journal Entry
+
+In this phase, I focused on preparing for motor mounting and electronics integration based on the finalized mechanical and electrical layout. Using the completed PVC frame, I reviewed the planned motor locations and confirmed that the three bilge pump motors can be securely mounted in the existing 1-1/4 inch openings on both sides and the center of the frame. I verified clearances for propellers and ensured there is adequate space to route wiring without interference from the frame or moving components.
+
+I also finalized the internal layout for the waterproof electronics enclosure. The enclosure will be mounted at the center of the frame and will house the Raspberry Pi, microcontroller, motor driver, buck converter, and power distribution wiring. Component placement was planned to keep high-current motor wiring separated from logic-level electronics and to minimize voltage loss and electrical noise.
+
+Additionally, I reviewed communication methods between the Raspberry Pi and microcontroller and confirmed a serial-based control approach for reliable motor control. This planning step ensures that once hardware is acquired, integration can proceed efficiently without major redesigns.
+
+This stage focused on reducing risk during hardware installation by identifying potential mechanical, electrical, and wiring issues early in the build process.
+
+## Time Spent
+Estimated 6 hours
+
+---
+
+
+
