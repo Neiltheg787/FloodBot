@@ -1,125 +1,98 @@
-# FloodBot
+FloodBot
+What is this?
+FloodBot is a low-cost underwater robot I am building to explore flooded areas. In its most basic description, it is a waterproof rover with a camera which can drive through shallow water and send back video. The whole thing is built of PVC pipes, some DC motors, and a Raspberry Pi-nothing fancy, but that is kind of the point.
+I am not trying to build something that replaces actual rescue teams; it is more about:
 
-## Project Overview
-FloodBot is a low-cost, student-built flood rescue robot designed to operate in shallow floodwaters and debris-filled environments. The project explores how affordable materials such as PVC framing, DC motors, and accessible single-board computers can be combined to create a functional and educational rescue-assist robot.
+To learn whether inexpensive materials can create anything useful
+Having a remote-controlled scout for flooded places
+Understanding how robotics, waterproofing, and power systems interact with each other
 
-FloodBot is not intended to replace first responders. Instead, it serves as:
-- A scouting and observation platform for flooded areas
-- A proof-of-concept for affordable rescue robotics
-- An educational tool for students learning robotics, embedded systems, and power design
+This is my project in Blueprint, and I am documenting everything so that other students can learn from-or laugh at-my mistakes.
 
-This project is being developed and documented as part of Hack Club Blueprint, with the goal of being open-source and reproducible by other students.
+Why Build This?
+It seems like floods are always happening, and they're really terrifying. I started to wonder if a student on a limited budget could build something that could actually be useful - or at least for checking out flooded basements or storm drains.
+Furthermore, I also needed a reason that would give me the opportunity to learn more about underwater robotics without having to shell out thousands of dollars on a high-end ROV kit.
 
----
+What I've Done So Far
+Currently, I have:
 
-## Motivation
-Flooding is one of the most common and destructive natural disasters worldwide. Many affected communities lack access to advanced robotic equipment due to cost and technical barriers.
+A complete PVC frame designed by me in Fusion 360
+The frame is designed to house all the electronics (motors, batteries, Pi, etc.)
+A full CAD model for a 3D system with components described
+Some research on how to connect all the wires without blowing something up
 
-FloodBot investigates whether a simple, low-cost design can still provide value by:
-- Allowing visual inspection of flooded or unsafe areas
-- Demonstrating basic robotic mobility and sensing
-- Teaching hands-on engineering concepts through iterative building
+The CAD Model:
+I designed the entire robot in Fusion 360, down to each and every component—frame, motor compartments, electronics case, mounting plates, and even propellers. The STEP files are in the /cad directory if you'd like to take a look and perhaps modify them to suit your needs. The frame consists of a PVC pipe cage, motors situated in each corner, and a water-tight case in the middle.
 
----
+How It Works (In Theory)
+The system breaks down like this:
+Brain:
 
-## Current Progress
-As of now, the following progress has been made:
-- PVC frame designed and fully assembled
-- Frame sized to house motors, battery, and electronics
-- Initial research completed on power distribution and motor control
+Raspberry Pi handles the camera, WiFi control, and telling the Arduino what to do
 
-The project currently lacks the electronics required to proceed with motion, sensing, and vision.
+Muscles:
 
----
+Arduino or Pi Pico runs the motors in real-time
+Two DC motors (differential drive - like a tank)
+Motor driver board safely controls speed and direction
 
-## System Architecture
+Eyes:
 
-### High-Level Breakdown
-- Raspberry Pi (3 or 4)  
-  Handles camera input, high-level control logic, and communication
+Raspberry Pi camera streams video over WiFi
 
-- Microcontroller (Arduino Uno or Raspberry Pi Pico)  
-  Responsible for real-time motor control and sensor handling
+Power:
 
-- DC Motors (2x)  
-  Differential drive system for movement and steering
+One battery pack feeds everything
+Buck converter steps voltage down to 5V for the electronics
+Motors run directly off battery voltage
 
-- Motor Driver  
-  Interfaces between the microcontroller and motors for safe direction and speed control
 
-- Camera Module  
-  Provides live video feed for navigation and observation
+The Parts I Need
+Electronics (waiting on grant)
 
-- Battery System  
-  Single battery pack with regulated 5V output for logic electronics
+Raspberry Pi 3 or 4
+Pi Camera Module
+Arduino Uno or Raspberry Pi Pico
+32GB microSD card
 
----
+Motion
 
-## Power Design
-Power is distributed from a single battery source:
-- Battery to DC-DC buck converter (5.1V) to Raspberry Pi and microcontroller
-- Battery directly to motor driver for DC motors
+2x DC geared motors (waterproof housings)
+Motor driver (TB6612FNG or L298N)
 
-All grounds are shared to ensure signal stability and prevent brownouts.
+Power
 
----
+Battery pack (probably Li-ion)
+Buck converter module (LM2596)
 
-## Parts Needed (Grant-Funded)
+Other Stuff
 
-### Core Electronics
-- Raspberry Pi (3 or 4)
-- Raspberry Pi Camera Module (8–12MP)
-- Microcontroller (Arduino Uno or Raspberry Pi Pico)
-- 32GB microSD card
+Wires, connectors
+Mounting screws
+Waterproofing materials (silicone, maybe some gaskets)
 
-### Motion and Control
-- Two DC geared motors
-- Motor driver module (TB6612FNG or L298N)
 
-### Power
-- Battery pack (AA or Li-ion)
-- DC-DC buck converter (LM2596)
+The Build Plan
+Once I get the parts, here's the order of operations:
 
-### Miscellaneous
-- Jumper wires
-- Mounting hardware
-- Waterproofing materials (sealant, gaskets)
+Mount motors to the PVC frame corners
+Wire up motor driver and Arduino
+Install battery and power regulation
+Add the Raspberry Pi and camera
+Get Pi and Arduino talking to each other
+Test if the motors actually work
+Get camera streaming
+Try not to short circuit anything
+Waterproof everything
+Test in water (probably my bathtub first)
 
----
 
-## Build Plan
-1. Mount DC motors to the PVC frame
-2. Install the motor driver and microcontroller
-3. Integrate the battery and regulated power system
-4. Install the Raspberry Pi and camera module
-5. Establish communication between the Raspberry Pi and microcontroller
-6. Test motor control and steering
-7. Enable camera streaming
-8. Iterate on waterproofing and mechanical stability
+What I'm Learning
+This project is teaching me about:
 
----
-
-## Documentation and Journaling
-All development progress will be documented in the `journal/` directory, including:
-- Build steps
-- Design changes
-- Issues encountered and solutions
-- Photos and diagrams
-
-This ensures the project remains transparent, reproducible, and educational.
-
----
-
-## Educational Value
-FloodBot demonstrates and teaches:
-- Embedded systems integration
-- Motor control and power safety
-- Mechanical prototyping using PVC
-- Documentation and open-source development practices
-
-The project is intended to be shared as a learning resource for student builders.
-
----
-
-## Project Status
-In progress — electronics acquisition required to continue development.
+How to distribute power without frying components
+Motor control and PWM signals
+Building mechanical structures that don't fall apart
+3D CAD modeling and mechanical design
+Documentation
+How waterproofing is way harder than it looks
