@@ -1,48 +1,41 @@
 # Journal – Initial Build and System Planning
 
-## Summary
-Assembled the PVC frame, planned motor placement, and researched power and electronics architecture for FloodBot.
+Assembled the PVC frame, designed the placement of the motors, researched the design of the power and electronics of FloodBot.
 
 ---
 
 ## Journal Entry
 
-I began the FloodBot project by assembling the full PVC frame that will serve as the chassis. The frame was cut, fitted, and assembled to ensure it was square, rigid, and structurally stable. After assembly, I checked the frame for flex and verified that it can support the weight of motors, batteries, electronics, and a waterproof enclosure without deforming. The frame dimensions were intentionally chosen to allow sufficient space for propulsion components, wiring, and future waterproofing.
+My first step of the FloodBot project was the assembly of the complete PVC frame, which will be used in the chassis. This was assembled in order to make it strong, stable, and square. Once it was assembled, I was confident that the PVC frame is flexible and will be able to accommodate the weight of the motors, batteries, electronics, and the waterproof box. This was done while keeping in mind the space that will be required later. —
 
-Once the frame was complete, I planned the placement of the propulsion system. The design uses three bilge pump motors mounted in the existing 1-1/4 inch openings on both sides and in the center of the frame. Each motor will be fitted with a propeller to provide thrust. This configuration allows for forward movement and steering while keeping the system balanced in water. The motor openings were checked for alignment and clearance to ensure secure mounting and accessibility for maintenance.
+Once the frame was complete, I planned the placement of the propulsion system. My design employs three bilge pump motors, mounted in the existing 1-1/4 inch openings on both sides and in the center of the frame. Each motor will be fitted with a propeller to provide thrust. This configuration allows for forward movement and steering while keeping the system balanced in water. The alignment and clearance of the motor openings were verified in order to fasten motors securely with access for maintenance.
 
-I then focused on planning the electronics system and enclosure layout. The center of the frame is reserved for a sealed waterproof enclosure that will house all sensitive electronics, including the Raspberry Pi, microcontroller (Arduino or Raspberry Pi Pico), motor driver, buck converter, and internal wiring. Centralizing all electronics in one enclosure simplifies waterproofing, protects components from water exposure, and allows for cleaner cable management.
-
-In parallel, I researched power distribution and motor control strategies to ensure reliable operation in a high-current, wet environment. A major concern was preventing voltage drops and brownouts when the motors start under load. Based on this research, I planned to use a single battery source with a DC-DC buck converter to supply a regulated 5V rail for the Raspberry Pi and microcontroller, while routing raw battery voltage directly to the motor driver. All grounds will be shared to maintain signal stability and reduce electrical noise.
-
-Overall, this phase established a solid mechanical foundation and a clear plan for propulsion, power, and electronics integration. With the chassis complete and system architecture defined, the next step is acquiring components and beginning motor and electronics integration.
-
----
+I then had to focus on planning the electronics system and enclosure layout. The middle of the frame will be used for a waterproof case that houses all sensitive electronic pieces, such as the Raspberry Pi, microcontroller Arduino or Raspberry Pi Pico, motor driver, buck converter, and internal wiring. This is highly effective in putting all electronics in one enclosure, which will simplify waterproofing, prevent water exposure of the components, and also allow cleaner cable management. In parallel, I also researched power distribution and motor control strategies to ensure that the system operates reliably in a high-current wet environment. Voltage drops and brownouts at motor start-up under load are a major concern. Based on the research, the plan was to use one source of the battery with a DC-DC buck converter to feed a regulated 5V rail to the Raspberry Pi and microcontroller, while raw battery voltage would be forwarded directly to the motor driver. All grounds shall be shared for signal stability and to reduce electrical noise.
 
 ## Time Spent
-Estimated 6 hours
+6 hours estimates
+
+---
 
 # Journal – Motor and Electronics Integration Planning
 
-## Summary
-Prepared for motor mounting and electronics integration based on finalized layout.
+gable roof
+
+Prepared for motor installation and electronics integration based on the completed layout.
 
 ---
 
 ## Journal Entry
 
-In this phase, I focused on preparing for motor mounting and electronics integration based on the finalized mechanical and electrical layout. Using the completed PVC frame, I reviewed the planned motor locations and confirmed that the three bilge pump motors can be securely mounted in the existing 1-1/4 inch openings on both sides and the center of the frame. I verified clearances for propellers and ensured there is adequate space to route wiring without interference from the frame or moving components.
+In this stage, I concentrated on motor mounting and electronics integration with respect to the final mechanical and electrical layout design. With the completed PVC frame, I examined the positions slated for the motors and satisfied myself that it would indeed be possible to mount the three bilge pump motors within the existing openings provided on either side and center positions on the frame using the 1-1/4 inch openings available. I also completed the design of the internal structure of the waterproof electronics enclosure. This enclosure will be placed at the center of the frame, so all the electronic devices, including the Raspberry Pi, microcontroller, motor driver, buck converter, and the wire connections inside the circuit responsible for the distribution of power, will be placed inside the enclosure.
 
-I also finalized the internal layout for the waterproof electronics enclosure. The enclosure will be mounted at the center of the frame and will house the Raspberry Pi, microcontroller, motor driver, buck converter, and power distribution wiring. Component placement was planned to keep high-current motor wiring separated from logic-level electronics and to minimize voltage loss and electrical noise.
+While placing the components, I paid special attention so that the wire connections of the motors remain isolated from the logic circuitry. Further, I examined communication interfaces between the Raspberry Pi and the microcontroller and verified a control mechanism based on a serial interface to ensure proper control of the motor. This step of planning guarantees that when hardware components are obtained, implementation can be done efficiently with minimal redesigning.
 
-Additionally, I reviewed communication methods between the Raspberry Pi and microcontroller and confirmed a serial-based control approach for reliable motor control. This planning step ensures that once hardware is acquired, integration can proceed efficiently without major redesigns.
-
-This stage focused on reducing risk during hardware installation by identifying potential mechanical, electrical, and wiring issues early in the build process.
+During this phase, emphasis was on minimizing risk with respect to hardware installation, identifying possible difficulties with respect to mechanics, electronics, and wiring.
 
 ## Time Spent
-Estimated 6 hours
+6 Hours
 
----
 
 
 
