@@ -1,41 +1,57 @@
-# Journal – Initial Build and System Planning
+Started FloodBot
 
-Assembled the PVC frame, designed the placement of the motors, researched the design of the power and electronics of FloodBot.
 
----
+The FloodBot was created to be an inexpensive flood exploration robot and to learn how waterproofing, power, and robotic systems integrate. The objective is to create something useful using inexpensive materials rather than relying on expensive commercial ROV kits.
 
-## Journal Entry
 
-My first step of the FloodBot project was the assembly of the complete PVC frame, which will be used in the chassis. This was assembled in order to make it strong, stable, and square. Once it was assembled, I was confident that the PVC frame is flexible and will be able to accommodate the weight of the motors, batteries, electronics, and the waterproof box. This was done while keeping in mind the space that will be required later. —
+Assembled PVC Frame for FloodBot Chassis
 
-Once the frame was complete, I planned the placement of the propulsion system. My design employs three bilge pump motors, mounted in the existing 1-1/4 inch openings on both sides and in the center of the frame. Each motor will be fitted with a propeller to provide thrust. This configuration allows for forward movement and steering while keeping the system balanced in water. The alignment and clearance of the motor openings were verified in order to fasten motors securely with access for maintenance.
 
-I then had to focus on planning the electronics system and enclosure layout. The middle of the frame will be used for a waterproof case that houses all sensitive electronic pieces, such as the Raspberry Pi, microcontroller Arduino or Raspberry Pi Pico, motor driver, buck converter, and internal wiring. This is highly effective in putting all electronics in one enclosure, which will simplify waterproofing, prevent water exposure of the components, and also allow cleaner cable management. In parallel, I also researched power distribution and motor control strategies to ensure that the system operates reliably in a high-current wet environment. Voltage drops and brownouts at motor start-up under load are a major concern. Based on the research, the plan was to use one source of the battery with a DC-DC buck converter to feed a regulated 5V rail to the Raspberry Pi and microcontroller, while raw battery voltage would be forwarded directly to the motor driver. All grounds shall be shared for signal stability and to reduce electrical noise.
+The PVC frame for the FloodBot chassis was assembled, and care was taken to ensure that the frame was square, rigid, and strong enough to handle the weight of the motor, battery, and electronic components. After assembling the PVC frame, I determined the internal dimensions to determine the placement of the electronics box, wiring, and power system, which will help guide the design of the layout and its waterproofing.
 
-## Time Spent
-6 hours estimates
 
----
 
-# Journal – Motor and Electronics Integration Planning
+CAD Model of Planned Motor Placement
 
-gable roof
 
-Prepared for motor installation and electronics integration based on the completed layout.
+A CAD model of the planned motor placement and waterproof electronics box placement inside the PVC frame was created. The motor placement is in existing openings in the PVC frame to maintain balance, and the center section of the frame will be used for the sealed electronics box.
 
----
 
-## Journal Entry
 
-In this stage, I concentrated on motor mounting and electronics integration with respect to the final mechanical and electrical layout design. With the completed PVC frame, I examined the positions slated for the motors and satisfied myself that it would indeed be possible to mount the three bilge pump motors within the existing openings provided on either side and center positions on the frame using the 1-1/4 inch openings available. I also completed the design of the internal structure of the waterproof electronics enclosure. This enclosure will be placed at the center of the frame, so all the electronic devices, including the Raspberry Pi, microcontroller, motor driver, buck converter, and the wire connections inside the circuit responsible for the distribution of power, will be placed inside the enclosure.
+Researched Power and Motor Control
 
-While placing the components, I paid special attention so that the wire connections of the motors remain isolated from the logic circuitry. Further, I examined communication interfaces between the Raspberry Pi and the microcontroller and verified a control mechanism based on a serial interface to ensure proper control of the motor. This step of planning guarantees that when hardware components are obtained, implementation can be done efficiently with minimal redesigning.
 
-During this phase, emphasis was on minimizing risk with respect to hardware installation, identifying possible difficulties with respect to mechanics, electronics, and wiring.
-
-## Time Spent
-6 Hours
+Research was done regarding power and motor control to ensure stable operation in a wet and high current environment. The research focused on preventing brownouts during motor start-up and reducing electrical noise.
 
 
 
 
+Switched Motor Positions and Motor Types
+
+
+
+I modified the original CAD design to improve internal stability and water flow. I changed motor orientations and adjusted placement to improve thrust efficiency while keeping the frame balanced. These iterations helped refine the design before committing to final wiring and enclosure layouts.
+
+
+
+
+Affordability Considerations
+
+
+
+I prioritized affordability by building the frame from PVC and minimizing custom parts. I also worked with the bilge pump manufacturer and received approval for a small grant covering two motors, which reduced overall cost. Keeping the design low-cost was a key constraint throughout the project.
+
+
+
+Created Wiring Diagram
+
+
+
+I finalized the wiring diagram to match the intended control architecture. The Raspberry Pi handles camera streaming and high-level control, while the Arduino Uno R4 manages real-time motor control. Power is distributed using a buck converter to provide stable 5V for logic electronics and separate motor power through the motor driver. Motors are paired by side for stability, and all components share a common ground.
+
+
+
+
+Final Design Review Prep
+
+The design is complete at this point. I've sanity-checked the design with other people. The parts are pending. After that, I will assemble the electronics, make the system waterproof, and start controlled water tests. The focus is on moving the design into physical tests.
